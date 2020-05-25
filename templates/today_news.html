@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>今日新闻</title>
-    <link rel="icon" href="{% static 'img/新闻.svg' %}" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
@@ -16,13 +16,13 @@
 <div align="center" style="margin: 5%">
     <div>
         <div style="margin: 3%;">
-            <span style="margin: 2%">{{ year }}年{{ month }}月{{ day }}日</span>
-            <span style="margin: 3%">{{ lunar_year }}年{{ lunar_month }}月{{ lunar_day }}日</span>
+            <span style="margin-right: 2%">{{ year }}年{{ month }}月{{ day }}日</span>
+            <span style="margin-left: 8%">{{ lunar_date.year }}年{{ lunar_date.month }}月{{ lunar_date.day }}日</span>
         </div>
 
         <div style="margin: 3%;">
-            <span style="margin: 2%">宜：{{ fitness }}</span>
-        <span style="margin: 2%">忌：{{ taboo }}</span>
+            <span style="margin-right: 2%">宜：{{ lunar_date.fitness }}</span>
+        <span style="margin-left: 2%">忌：{{ lunar_date.taboo }}</span>
         </div>
     </div>
 </div>
@@ -30,7 +30,7 @@
 <div style="margin: 5%">
     {% for item in news_list %}
         <div style="margin: 8%;">
-            <h3>{{ forloop.counter }}.{{ item.title }}</h3>
+            <a href="{{ item.url }}" target="_blank" style="text-decoration: none; color: black" title="点击查看新闻详情"><h3>{{ forloop.counter }}.{{ item.title }}</h3></a>
             <p style="text-indent: 2em">{{ item.digest }}</p>
         </div>
     {% endfor %}
