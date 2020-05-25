@@ -8,27 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 <body>
-<div align="center" style="margin-bottom: 5%">
+
+<div align="center" style="margin-top: 2%">
     <h1 style="display: inline">今日新闻</h1>
 </div>
 
-<div align="center" style="margin: 60px">
+<div align="center" style="margin: 6%">
     <div>
-        <div style="margin: 30px;">
-            <span style="margin-right: 30px">{{ year }}年{{ month }}月{{ day }}日</span>
-            <span style="margin-left: 80px">{{ lunar_date.year }}年 {{ lunar_date.month }}月 {{ lunar_date.day }}日</span>
+        <div style="margin: 3%;">
+            <span style="margin-right: 3%">{{ year }}年{{ month }}月{{ day }}日</span>
+            <span style="margin-left: 8%">{{ lunar_date.year }} 年 {{ lunar_date.month }} 月 {{ lunar_date.day }} 日 </span>
         </div>
 
-        <div style="margin: 30px;">
-            <span style="margin-right: 10px">宜：{{ lunar_date.fitness }}</span>
-        <span style="margin-left: 20px">忌：{{ lunar_date.taboo }}</span>
+        <div style="margin: 3%;">
+            <span style="margin-right: 1%">宜：{{ lunar_date.fitness }}</span>
+        <span style="margin-left: 2%">忌：{{ lunar_date.taboo }}</span>
         </div>
     </div>
 </div>
 
-<div style="margin: 50px">
+<div style="margin: 5%">
     {% for item in news_list %}
-        <div style="margin: 80px;">
+        <div style="margin: 8%;">
             <a href="{{ item.url }}" target="_blank" style="text-decoration: none; color: black" title="点击查看新闻详情"><h3>{{ forloop.counter }}.{{ item.title }}</h3></a>
             <p style="text-indent: 2em">{{ item.digest }}</p>
         </div>
