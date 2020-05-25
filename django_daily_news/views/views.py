@@ -18,9 +18,10 @@ def index(request):
 
     almanac_list = get_info.get_almanac()
     almanac_list = almanac_list[0]
+    print(almanac_list)
     lunar_year = almanac_list['tiangandizhiyear']
-    lunar_month = almanac_list['lubarmonth']
-    lunar_day = almanac_list['lunarday']
+    lunar_month = almanac_list['tiangandizhimonth']
+    lunar_day = almanac_list['tiangandizhiday']
     fitness = almanac_list['fitness']
     taboo = almanac_list['taboo']
     lunar_date = LunarDate(year=lunar_year,month=lunar_month,
